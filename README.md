@@ -4,5 +4,5 @@ A package that load environment variables from AWS or system environment variabl
 ## Installation
 
 ```bash
-pip install aws_environ
+pip install aws_environ_loader
 ```

@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="aws_environ",
+    name="aws_environ_loader",
     version="1.0.0",  # Initial version
     author="Jarklee",
     author_email="quantv@vikoisoft.com",
