@@ -9,10 +9,12 @@ class AWSSecretManager:
     def __init__(
             self,
             access_key_id: Optional[str] = None,
-            secret_access_key: Optional[str] = None
+            secret_access_key: Optional[str] = None,
+            session_token: Optional[str] = None,
     ):
         self.access_key_id = access_key_id
         self.secret_access_key = secret_access_key
+        self.session_token = session_token
 
     @cache
     def get(self, arn: str):
@@ -25,8 +27,9 @@ class AWSSecretManager:
         client = boto3.client(
             "secretsmanager",
             region_name=region,
-            access_key_id=self.access_key_id,
-            secret_access_key=self.secret_access_key
+            aws_access_key_id=self.access_key_id,
+            aws_secret_access_key=self.secret_access_key,
+            aws_session_token=self.session_token,
         )
         secret_response = client.get_secret_value(SecretId=secret_name)
         value = secret_response["SecretString"]

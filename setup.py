@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="aws_environ_loader",
-    version="1.0.0",  # Initial version
+    version="1.0.2",  # Initial version
     author="Jarklee",
     author_email="quantv@vikoisoft.com",
     description="A package that load environment variables from AWS or system environment variables",
